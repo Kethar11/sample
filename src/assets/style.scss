@@ -1,0 +1,243 @@
+////////////////////  Loading Screen Start  ////////////////////
+    
+.overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.loading-screen{
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./img/loading-page-bg.png") no-repeat fixed center;    
+    background-size: cover;
+
+     svg {
+        z-index: 1;
+
+        text {
+            fill: #fff;
+        }
+     }
+
+    img {
+        position: absolute;
+    }
+}
+////////////////////  Loading Screen End  ////////////////////
+
+////////////////////  Buttons Hover Effect Start  ////////////////////
+
+.button_container{
+    display: flex;
+
+    .button_su{
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border-radius: 3px;
+        margin-right: 30px;
+    }
+
+    .su_button_circle{
+        background-color: red;
+        border-radius: 1000px;
+        position: absolute;
+        left:0;
+        top:0;
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        pointer-events: none;
+        animation-timing-function: ease-in-out;
+    }
+
+    .button_su_inner{
+        color: #000;
+        font-size: 16px;
+        font-weight: normal;
+        text-align: center;
+        transition: 400ms;
+        text-decoration: none;
+        z-index: 100000;
+    }
+
+    .button_text_container{
+        position:relative;
+        z-index: 10000;
+    }
+
+    .explode-circle {
+    animation: explode 0.5s forwards;
+    }
+
+    .desplode-circle{
+    animation: desplode 0.5s forwards;
+    }
+
+    @keyframes explode {
+    0% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-image: linear-gradient(
+                to right,
+                #12c2e9,
+                #c471ed
+            );
+    }
+    100% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-image: linear-gradient(
+        to right,
+        #feac5e,
+        #c779d0,
+        #4bc0c8
+        );
+    }
+    }
+
+    @keyframes desplode {
+    0% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        /* background-color: rgba(20, 180, 87,0.8); */
+        background-image: linear-gradient(
+        to right,
+        #12c2e9,
+        #c471ed
+        );
+    }
+    100% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        /* background-color: rgba(42, 53, 80,0.2); */
+        background-image: linear-gradient(
+        to right,
+        #feac5e,
+        #c779d0,
+        #4bc0c8
+        );
+    }
+    }
+}
+
+@media (max-width: 991px) {
+    .button_container{
+        flex-direction: column;
+
+        .button_su{
+            margin-bottom: 15px;
+        }
+        
+        .button_su_inner{
+            width: 100px;
+            text-align: start;
+            padding-left: 10px;
+        }
+    }
+}
+////////////////////  Buttons Hover Effect End  ////////////////////
+
+////////////////////  Sidemenu Hover Effect Start  ////////////////////
+
+.i-sidemenu {
+    position: fixed;
+    top: 35%;
+    z-index: 9999;
+
+    .sidemenu-hovered{
+        width: 170px !important;
+        min-width: 170px !important;
+    }
+    
+    .sidebar-content{
+        background-image: linear-gradient(
+          to right,
+          #f7b42c,
+          #ef8b22
+        ) !important;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    
+        li {
+            margin: 10px 0 !important;
+            &:first-child{
+                margin-top: 0 !important;
+            }
+    
+            .item-content{
+                margin-left: 11px;
+            }
+        }
+    }
+    
+    .sidemenu-hover.toggled{
+        width: 60px !important;
+        min-width: 60px !important;
+    }
+}
+////////////////////  Sidemenu Hover Effect End  ////////////////////
+
+
+
+// .landing-page{
+//     min-height: 150vh;
+// }
+
+.i-footer{
+    position: relative;
+    padding: 20px 0;
+    text-align: center;   
+    font-weight: bold;
+    color: #fff;
+    background-image: linear-gradient(
+      #f7b42c,
+      #ef8b22
+    );
+}
+
+.i-contact{
+    background: url("./img/loading-page-bg.png") no-repeat fixed top;    
+    background-size: cover;
+    z-index: 0;
+    position: relative;
+    padding: 20px 0;
+
+    .contact-text{
+        z-index: 2;
+        color: #fff;
+
+        .head-text{
+            padding: 20px 0;            
+        }
+
+        .ct-mail, .ct-number {
+            a{
+                color:#ef8b22 !important;
+                text-decoration: none;
+            }
+        }
+        h4 {
+            color:#ef8b22 !important;
+        }
+    }
+    .overlay-bg {
+        z-index: -1 !important;
+        background-color: rgb(0, 0, 0, 0.7) !important;
+    }
+}
