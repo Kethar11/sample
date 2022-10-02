@@ -32,17 +32,18 @@ export const HoverButtons = (props) => {
 
 
     return(
-        <div className="ms-auto button_container">
+        <div className="ms-auto button_container" >
             {title.map((text,i) => 
                 <div ref={inputRef[i]}  className="button_su">
                     <span className="su_button_circle">
                     </span>
                     <Nav
+                     onClick={()=>{props.navigate(`/${text.route}`)}}
                      className="button_su_inner"
                      onMouseEnter={(e)=>{hoverFunction (e, i, "explode-circle", "desplode-circle")}}
                      onMouseLeave={(e)=>{hoverFunction (e, i, "desplode-circle", "explode-circle")}}
                      >
-                    <Nav.Link className="button_text_container">{text}</Nav.Link>
+                    <Nav.Link className="button_text_container">{text.name}</Nav.Link>
                     </Nav>
                 </div>
             )}

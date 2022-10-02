@@ -1,13 +1,22 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/img/i-logo.png';
 import { HoverButtons } from './common/button/i-button';
 
 const IHeader= () =>{
+  const navigate = useNavigate();
+  const title =[
+    {name:"Home", route:"home" },
+    {name:"Services", route:"services" },
+    {name:"Speciality", route:"speciality" },
+    {name:"Contact Us", route:"contact" },
+
+  ]
   return (
     <Navbar bg="light" expand="lg" className="i-header">
       <Container>
-      <Navbar.Brand href="#home" className="p-0">
+      <Navbar.Brand  className="p-0" onClick={()=>navigate('/')}>
             <img
               src={logo}
               className="d-inline-block align-top p-0"
@@ -17,7 +26,7 @@ const IHeader= () =>{
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
 
-          <HoverButtons Title={["Home", "Services", "Speciality", "Contact Us"]} />
+          <HoverButtons Title={title} navigation={true} navigate={navigate}/>
              
         </Navbar.Collapse>
       </Container>
