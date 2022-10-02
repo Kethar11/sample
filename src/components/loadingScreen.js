@@ -30,8 +30,8 @@ function LoadingScreen(props) {
               <svg viewBox="0 0 110 100" style={{ width: "300", height: "300"}}>
 
                 <linearGradient id="loading-gradient" x1="0" y1="0" x2="0" y2="100%">
-                  <stop offset="0%" stopColor="#fdfc47" />
-                  <stop offset="100%" stopColor="#24fe41" />
+                  <stop offset="0%" stopColor="#f7b42c" />
+                  <stop offset="100%" stopColor="#ef8b22" />
                 </linearGradient>
                 <path 
                 id="circle-halo" 

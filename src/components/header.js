@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../assets/img/i-logo.png';
 import { HoverButtons } from './common/button/i-button';
 
-const IHeader= () =>{
+const IHeader= ({headerRef, contactRef, footerRef}) =>{
   const navigate = useNavigate();
   const title =[
     {name:"Home", route:"home" },
@@ -26,7 +26,7 @@ const IHeader= () =>{
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
 
-          <HoverButtons Title={title} navigation={true} navigate={navigate}/>
+          <HoverButtons Title={title} navigation={true} navigate={navigate} headerRef={headerRef} contactRef={contactRef} footerRef={footerRef}/>
              
         </Navbar.Collapse>
       </Container>

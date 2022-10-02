@@ -2,12 +2,18 @@ import Container from 'react-bootstrap/Container';
 import IHeader from './header';
 import IFooter from './footer';
 import Sidebar from './sideMenu';
-import ContactUs from './common/contactUs';
+import ContactUs from './contactUs';
+import MissionVission from './missionVission';
+
+import { useRef } from 'react';
 
 const Dashboard= () =>{
+    const headerRef = useRef(null); //represents main section
+  const footerRef = useRef(null); //represents about section
+  const contactRef = useRef(null);
 return(
     <>
-        <IHeader />
+        <IHeader headerRef={headerRef} contactRef={contactRef} footerRef={footerRef}/>
         <div className="landing-page">  
         <Sidebar />
         <Container>
@@ -36,9 +42,10 @@ ipsum dolor sit amet...'
 
 Translations: Can you help translate this site into a foreign language ? Please email us with details if you can help.
         </Container>
-        <ContactUs />
+ <MissionVission />
+        <ContactUs headerRef={headerRef} contactRef={contactRef} footerRef={footerRef}/>
         </div>
-        <IFooter />
+        <IFooter headerRef={headerRef} contactRef={contactRef} footerRef={footerRef}/>
         
     </>
 )

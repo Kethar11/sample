@@ -1,0 +1,52 @@
+.bounce {
+    &:hover{
+        i{
+            animation: bounce 2s ease infinite;
+        }
+    }
+}
+@keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-10px);}
+      60% {transform: translateY(-5px);}
+}
+
+.shakescale {
+    &:hover{
+        i{
+        animation: shakescale 2s ease infinite;
+        }
+    }
+}
+@keyframes shakescale {
+    30% { transform: scale(1.2); }
+    40%, 60% { transform: rotate(-20deg) scale(1.2); }
+    50% { transform: rotate(20deg) scale(1.2); }
+    70% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.shake {
+    &:hover{
+        i{
+        animation: shake 2s ease infinite;
+        }
+    }
+}
+@keyframes shake {
+    40%, 60% { transform: rotate(-20deg) }
+    50% { transform: rotate(20deg) }
+    70% { transform: rotate(0deg) }
+}
+
+.swing {
+	transform-origin: top center;
+	animation: swing 2s ease infinite;
+}
+@keyframes swing {
+	20% { transform: rotateX(15deg); }	
+	40% { transform: rotateX(-10deg); }
+	60% { transform: rotateX(5deg); }	
+	80% { transform: rotateX(-5deg); }	
+	100% { transform: rotateX(0deg); }
+}

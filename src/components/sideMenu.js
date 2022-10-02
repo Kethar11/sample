@@ -5,6 +5,7 @@ import {
   CDBSidebarMenu,
   CDBSidebarMenuItem,
 } from 'cdbreact';
+import { useNavigate } from 'react-router-dom';
 
 const hoverFunction = (porps)=> {        
     let sidemenu = document.querySelector('.sidemenu-hover');
@@ -19,8 +20,19 @@ const hoverFunction = (porps)=> {
     
 }
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+  const navigate = useNavigate();
+const sideBarOnClick = (e)=>{
+  console.log("oct2 sideBarOnClick e",e)
+  //get id and passed to navigate property
 
+  //if route is already home page scroll upto top if not change route to home
+  //if clickable event id is service   change route to service
+  //if clickable event id is speciality   change route to speciality
+   //if route is already home page scroll upto bottom if not change route to home and scroll to bottom
+
+  // avigate('/home')
+}
   return (
     <div className='i-sidemenu'>
       <CDBSidebar 
@@ -33,16 +45,16 @@ const Sidebar = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <div exact to="/" activeClassName="activeClicked">
+            <div  onClick={(e)=>sideBarOnClick(e)} id="home" exact to="/" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
             </div>
-            <div exact to="/tables" activeClassName="activeClicked">
+            <div onClick={(e)=>sideBarOnClick(e)} id="services" exact to="/tables" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Services</CDBSidebarMenuItem>
             </div>
-            <div exact to="/profile" activeClassName="activeClicked">
+            <div onClick={(e)=>sideBarOnClick(e)} id="speciality" exact to="/profile" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="chart-line">Speciality</CDBSidebarMenuItem>
             </div>
-            <div exact to="/analytics" activeClassName="activeClicked">
+            <div onClick={(e)=>sideBarOnClick(e)} id="contact" exact to="/analytics" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Contact Us</CDBSidebarMenuItem>
             </div>
           </CDBSidebarMenu>
